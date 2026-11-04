@@ -1,0 +1,85 @@
+{
+  "source": {
+    "reportGeneratedAt": "2026-07-10T06:18:00.311Z",
+    "benchmarkStartedAt": "2026-06-24T11:55:26.862Z",
+    "benchmarkCompletedAt": "2026-06-29T20:59:36.076Z",
+    "metrics": ["p50", "p90"],
+    "metricScope": "one-query D1-to-Worker network latency",
+    "unit": "ms",
+    "acceptance": {
+      "preferredThresholdMs": 10,
+      "fallbackDeltaFromBestMs": 1,
+      "preferredComparison": "<",
+      "fallbackComparison": "<="
+    }
+  },
+  "regions": {
+    "weur": {
+      "label": "Western Europe",
+      "databaseSuffix": "-weur",
+      "rows": [
+        { "d1Colo": "CDG", "p50Ms": 6.9112, "p50WorkerPlacement": "aws:eu-west-3", "p50ExpectedWorkerColo": "CDG", "p90Ms": 9.9102, "p90WorkerPlacement": "gcp:europe-west9", "p90ExpectedWorkerColo": "CDG", "p50Acceptable": true, "p50P90Acceptable": true },
+        { "d1Colo": "LHR", "p50Ms": 7.9179, "p50WorkerPlacement": "azure:ukwest", "p50ExpectedWorkerColo": "LHR", "p90Ms": 11.7579, "p90WorkerPlacement": "aws:eu-west-2", "p90ExpectedWorkerColo": "LHR", "p50Acceptable": true, "p50P90Acceptable": false },
+        { "d1Colo": "MAD", "p50Ms": 9.5511, "p50WorkerPlacement": "aws:eu-south-2", "p50ExpectedWorkerColo": "MAD", "p90Ms": 11.9208, "p90WorkerPlacement": "aws:eu-south-2", "p90ExpectedWorkerColo": "MAD", "p50Acceptable": true, "p50P90Acceptable": false },
+        { "d1Colo": "AMS", "p50Ms": 8.8789, "p50WorkerPlacement": "azure:westeurope", "p50ExpectedWorkerColo": "AMS", "p90Ms": 12.8479, "p90WorkerPlacement": "azure:westeurope", "p90ExpectedWorkerColo": "AMS", "p50Acceptable": true, "p50P90Acceptable": false },
+        { "d1Colo": "MRS", "p50Ms": 10.7758, "p50WorkerPlacement": "azure:francesouth", "p50ExpectedWorkerColo": "MRS", "p90Ms": 16.8624, "p90WorkerPlacement": "azure:francesouth", "p90ExpectedWorkerColo": "MRS", "p50Acceptable": false, "p50P90Acceptable": false },
+        { "d1Colo": "LIS", "p50Ms": 17.9177, "p50WorkerPlacement": "aws:eu-south-2", "p50ExpectedWorkerColo": "MAD", "p90Ms": 21.8074, "p90WorkerPlacement": "aws:eu-south-2", "p90ExpectedWorkerColo": "MAD", "p50Acceptable": false, "p50P90Acceptable": false }
+      ]
+    },
+    "eeur": {
+      "label": "Eastern Europe",
+      "databaseSuffix": "-eeur",
+      "rows": [
+        { "d1Colo": "WAW", "p50Ms": 5.8892, "p50WorkerPlacement": "azure:polandcentral", "p50ExpectedWorkerColo": "WAW", "p90Ms": 7.8621, "p90WorkerPlacement": "azure:polandcentral", "p90ExpectedWorkerColo": "WAW", "p50Acceptable": true, "p50P90Acceptable": true },
+        { "d1Colo": "MXP", "p50Ms": 5.9038, "p50WorkerPlacement": "gcp:europe-west8", "p50ExpectedWorkerColo": "MXP", "p90Ms": 7.8988, "p90WorkerPlacement": "aws:eu-south-1", "p90ExpectedWorkerColo": "MXP", "p50Acceptable": true, "p50P90Acceptable": true },
+        { "d1Colo": "FRA", "p50Ms": 6.8864, "p50WorkerPlacement": "aws:eu-central-1", "p50ExpectedWorkerColo": "FRA", "p90Ms": 8.9058, "p90WorkerPlacement": "azure:germanywestcentral", "p90ExpectedWorkerColo": "FRA", "p50Acceptable": true, "p50P90Acceptable": true },
+        { "d1Colo": "ARN", "p50Ms": 6.916, "p50WorkerPlacement": "aws:eu-north-1", "p50ExpectedWorkerColo": "ARN", "p90Ms": 9.8212, "p90WorkerPlacement": "aws:eu-north-1", "p90ExpectedWorkerColo": "ARN", "p50Acceptable": true, "p50P90Acceptable": true },
+        { "d1Colo": "HAM", "p50Ms": 13.9068, "p50WorkerPlacement": "gcp:europe-west3", "p50ExpectedWorkerColo": "FRA", "p90Ms": 17.8461, "p90WorkerPlacement": "azure:westeurope", "p90ExpectedWorkerColo": "AMS", "p50Acceptable": false, "p50P90Acceptable": false },
+        { "d1Colo": "VIE", "p50Ms": 16.898, "p50WorkerPlacement": "azure:polandcentral", "p50ExpectedWorkerColo": "WAW", "p90Ms": 18.9032, "p90WorkerPlacement": "azure:polandcentral", "p90ExpectedWorkerColo": "WAW", "p50Acceptable": false, "p50P90Acceptable": false }
+      ]
+    },
+    "apac": {
+      "label": "Asia-Pacific",
+      "databaseSuffix": "-apac",
+      "rows": [
+        { "d1Colo": "ICN", "p50Ms": 5.8908, "p50WorkerPlacement": "gcp:asia-northeast3", "p50ExpectedWorkerColo": "ICN", "p90Ms": 7.9259, "p90WorkerPlacement": "gcp:asia-northeast3", "p90ExpectedWorkerColo": "ICN", "p50Acceptable": true, "p50P90Acceptable": true },
+        { "d1Colo": "KIX", "p50Ms": 5.8962, "p50WorkerPlacement": "gcp:asia-northeast2", "p50ExpectedWorkerColo": "KIX", "p90Ms": 8.8362, "p90WorkerPlacement": "gcp:asia-northeast2", "p90ExpectedWorkerColo": "KIX", "p50Acceptable": true, "p50P90Acceptable": true },
+        { "d1Colo": "HKG", "p50Ms": 7.881, "p50WorkerPlacement": "gcp:asia-east2", "p50ExpectedWorkerColo": "HKG", "p90Ms": 10.8827, "p90WorkerPlacement": "gcp:asia-east2", "p90ExpectedWorkerColo": "HKG", "p50Acceptable": true, "p50P90Acceptable": false },
+        { "d1Colo": "NRT", "p50Ms": 6.8804, "p50WorkerPlacement": "azure:japaneast", "p50ExpectedWorkerColo": "NRT", "p90Ms": 13.891, "p90WorkerPlacement": "azure:japaneast", "p90ExpectedWorkerColo": "NRT", "p50Acceptable": true, "p50P90Acceptable": false },
+        { "d1Colo": "SIN", "p50Ms": 11.8462, "p50WorkerPlacement": "gcp:asia-southeast1", "p50ExpectedWorkerColo": "SIN", "p90Ms": 15.8876, "p90WorkerPlacement": "gcp:asia-southeast1", "p90ExpectedWorkerColo": "SIN", "p50Acceptable": false, "p50P90Acceptable": false }
+      ]
+    },
+    "oc": {
+      "label": "Oceania",
+      "databaseSuffix": "-oc",
+      "rows": [
+        { "d1Colo": "MEL", "p50Ms": 6.9025, "p50WorkerPlacement": "aws:ap-southeast-4", "p50ExpectedWorkerColo": "MEL", "p90Ms": 10.8224, "p90WorkerPlacement": "gcp:australia-southeast2", "p90ExpectedWorkerColo": "MEL", "p50Acceptable": true, "p50P90Acceptable": true },
+        { "d1Colo": "SYD", "p50Ms": 4.9178, "p50WorkerPlacement": "gcp:australia-southeast1", "p50ExpectedWorkerColo": "SYD", "p90Ms": 10.8408, "p90WorkerPlacement": "gcp:australia-southeast1", "p90ExpectedWorkerColo": "SYD", "p50Acceptable": true, "p50P90Acceptable": true },
+        { "d1Colo": "AKL", "p50Ms": 8.884, "p50WorkerPlacement": "azure:newzealandnorth", "p50ExpectedWorkerColo": "AKL", "p90Ms": 14.8643, "p90WorkerPlacement": "aws:ap-southeast-6", "p90ExpectedWorkerColo": "AKL", "p50Acceptable": true, "p50P90Acceptable": false },
+        { "d1Colo": "BNE", "p50Ms": 17.8732, "p50WorkerPlacement": "gcp:australia-southeast1", "p50ExpectedWorkerColo": "SYD", "p90Ms": 23.8292, "p90WorkerPlacement": "gcp:australia-southeast1", "p90ExpectedWorkerColo": "SYD", "p50Acceptable": false, "p50P90Acceptable": false }
+      ]
+    },
+    "wnam": {
+      "label": "Western North America",
+      "databaseSuffix": "-wnam",
+      "rows": [
+        { "d1Colo": "LAX", "p50Ms": 9.8903, "p50WorkerPlacement": "gcp:us-west2", "p50ExpectedWorkerColo": "LAX", "p90Ms": 13.8536, "p90WorkerPlacement": "gcp:us-west2", "p90ExpectedWorkerColo": "LAX", "p50Acceptable": true, "p50P90Acceptable": true },
+        { "d1Colo": "DFW", "p50Ms": 10.8397, "p50WorkerPlacement": "azure:southcentralus", "p50ExpectedWorkerColo": "DFW", "p90Ms": 14.5145, "p90WorkerPlacement": "azure:southcentralus", "p90ExpectedWorkerColo": "DFW", "p50Acceptable": false, "p50P90Acceptable": false },
+        { "d1Colo": "SEA", "p50Ms": 10.8856, "p50WorkerPlacement": "aws:us-west-2", "p50ExpectedWorkerColo": "SEA", "p90Ms": 14.8023, "p90WorkerPlacement": "aws:us-west-2", "p90ExpectedWorkerColo": "SEA", "p50Acceptable": false, "p50P90Acceptable": false },
+        { "d1Colo": "SJC", "p50Ms": 10.8222, "p50WorkerPlacement": "azure:westus", "p50ExpectedWorkerColo": "SJC", "p90Ms": 17.8371, "p90WorkerPlacement": "azure:westus", "p90ExpectedWorkerColo": "SJC", "p50Acceptable": false, "p50P90Acceptable": false },
+        { "d1Colo": "DEN", "p50Ms": 18.8871, "p50WorkerPlacement": "azure:westcentralus", "p50ExpectedWorkerColo": "SLC", "p90Ms": 22.8349, "p90WorkerPlacement": "azure:westcentralus", "p90ExpectedWorkerColo": "SLC", "p50Acceptable": false, "p50P90Acceptable": false }
+      ]
+    },
+    "enam": {
+      "label": "Eastern North America",
+      "databaseSuffix": "-enam",
+      "rows": [
+        { "d1Colo": "IAD", "p50Ms": 6.8961, "p50WorkerPlacement": "azure:eastus2", "p50ExpectedWorkerColo": "IAD", "p90Ms": 9.8952, "p90WorkerPlacement": "azure:eastus2", "p90ExpectedWorkerColo": "IAD", "p50Acceptable": true, "p50P90Acceptable": true },
+        { "d1Colo": "ORD", "p50Ms": 9.9177, "p50WorkerPlacement": "aws:us-east-2", "p50ExpectedWorkerColo": "ORD", "p90Ms": 13.8391, "p90WorkerPlacement": "aws:us-east-2", "p90ExpectedWorkerColo": "ORD", "p50Acceptable": true, "p50P90Acceptable": false },
+        { "d1Colo": "ATL", "p50Ms": 10.7735, "p50WorkerPlacement": "gcp:us-east1", "p50ExpectedWorkerColo": "ATL", "p90Ms": 15.8491, "p90WorkerPlacement": "gcp:us-east1", "p90ExpectedWorkerColo": "ATL", "p50Acceptable": false, "p50P90Acceptable": false },
+        { "d1Colo": "EWR", "p50Ms": 12.9123, "p50WorkerPlacement": "aws:us-east-1", "p50ExpectedWorkerColo": "IAD", "p90Ms": 15.8916, "p90WorkerPlacement": "aws:us-east-1", "p90ExpectedWorkerColo": "IAD", "p50Acceptable": false, "p50P90Acceptable": false },
+        { "d1Colo": "MIA", "p50Ms": 18.9152, "p50WorkerPlacement": "gcp:us-east1", "p50ExpectedWorkerColo": "ATL", "p90Ms": 27.9024, "p90WorkerPlacement": "gcp:us-east1", "p90ExpectedWorkerColo": "ATL", "p50Acceptable": false, "p50P90Acceptable": false }
+      ]
+    }
+  }
+}

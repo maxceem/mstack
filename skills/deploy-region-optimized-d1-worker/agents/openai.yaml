@@ -1,0 +1,4 @@
+interface:
+  display_name: "Deploy Region-Optimized D1 Worker"
+  short_description: "Optimize D1 and Worker placement by region"
+  default_prompt: "Use $deploy-region-optimized-d1-worker to deploy my D1 database and Worker in APAC with benchmark-guided placement."
