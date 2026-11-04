@@ -67,3 +67,7 @@ Put personal settings, like which models sit on the council, in your
 `council` and `sol-loop` are copied from
 [t3dotgg/tstack](https://github.com/t3dotgg/tstack) by Theo Browne, under the
 MIT License. See [THIRD_PARTY_LICENSE-tstack](THIRD_PARTY_LICENSE-tstack).
+
+## License
+
+[MIT](LICENSE)
