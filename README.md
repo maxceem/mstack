@@ -12,6 +12,7 @@ Claude Code, Codex, OpenCode, Cursor, Gemini CLI, and other agents that read
 | `council` | "council" | Gets review from three models from different providers, and loops until they agree. |
 | `sol-loop` | "sol loop" | Reviews a change with GPT Sol in a loop until both agents agree. |
 | `file-pr` | "file a PR" | Files a short PR that leads with the problem, not an inventory of changes. |
+| `task-to-pr` | "task to PR" | Hands a selected task, with the conversation's context, to a new T3 Code thread in a worktree that implements it, files a PR, and reviews it with `sol-loop`. |
 | `deploy-region-optimized-d1-worker` | "deploy a D1 worker in WEUR" | Deploys a Cloudflare D1 database and Worker with benchmark-guided placement for a region. |
 
 ## Install
@@ -55,6 +56,8 @@ helper).
 - `council` and `sol-loop` need subagents that run other providers' models.
   Without a harness that can start them, the skills report the blocker instead
   of substituting a model.
+- `task-to-pr` needs T3 Code, to start a thread in its own worktree, and
+  uses `file-pr` and `sol-loop` there.
 - `deploy-region-optimized-d1-worker` needs Node.js, Wrangler, and a
   Cloudflare account.
 
