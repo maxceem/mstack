@@ -16,7 +16,7 @@ Use [scripts/placement-plan.mjs](scripts/placement-plan.mjs) instead of manually
 ```bash
 node <skill-dir>/scripts/placement-plan.mjs --region apac --base-name app-db --pretty
 node <skill-dir>/scripts/placement-plan.mjs --region apac --colo ICN --attempt 1 --base-name app-db --pretty
-node <skill-dir>/scripts/placement-plan.mjs --region apac --colo HKG --attempt 11 --base-name app-db --pretty
+node <skill-dir>/scripts/placement-plan.mjs --region apac --colo HKG --attempt 31 --base-name app-db --pretty
 ```
 
 Replace `<skill-dir>` with this skill directory. In Claude Code, `${CLAUDE_SKILL_DIR}` resolves it.
@@ -62,16 +62,16 @@ If one of these cannot be discovered safely, ask only for the missing value.
 
 Do not combine `--jurisdiction` with this workflow. A jurisdiction overrides the D1 location hint.
 
-### 3. Create and observe D1, up to 20 attempts
+### 3. Create and observe D1, up to 50 attempts
 
 Use two phases:
 
-- Attempts 1–10: accept only colos in the p50→p90 table and use that row's p90 Worker placement.
-- Attempts 11–20: accept any colo in the p50 table and use that row's p50 Worker placement.
+- Attempts 1–30: accept only colos in the p50→p90 table and use that row's p90 Worker placement.
+- Attempts 31–50: accept any colo in the p50 table and use that row's p50 Worker placement.
 
-If attempts 1–10 produce no p50→p90 colo, report the phase transition and continue automatically with the p50 phase.
+If attempts 1–30 produce no p50→p90 colo, report the phase transition and continue automatically with the p50 phase.
 
-For attempts 1 through 20:
+For attempts 1 through 50:
 
 1. Create the database with the requested hint and without automatically editing project config:
 
@@ -100,7 +100,7 @@ For attempts 1 through 20:
 
 Treat the consistent write metadata as the required D1 colo verification. Do not configure or deploy the Worker until both the requested D1 region and an accepted primary colo are verified.
 
-If all 20 attempts are rejected, leave no rejected database from this run, report both phases and all observed colos, and ask whether the user wants another 10-attempt p50→p90 phase followed by a 10-attempt p50 phase.
+If all 50 attempts are rejected, leave no rejected database from this run, report both phases and all observed colos, and ask whether the user wants another 30-attempt p50→p90 phase followed by a 20-attempt p50 phase.
 
 ### 4. Configure the accepted database
 

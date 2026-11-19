@@ -105,8 +105,8 @@ function parseArgs(argv) {
     else if (arg === "--base-name") args.baseName = nextValue(argv, ++index, arg);
     else if (arg === "--attempt") {
       args.attempt = Number(nextValue(argv, ++index, arg));
-      if (!Number.isInteger(args.attempt) || args.attempt < 1 || args.attempt > 20) {
-        throw new Error("--attempt must be an integer from 1 through 20");
+      if (!Number.isInteger(args.attempt) || args.attempt < 1 || args.attempt > 50) {
+        throw new Error("--attempt must be an integer from 1 through 50");
       }
     }
     else if (arg === "--pretty") args.pretty = true;
@@ -135,7 +135,7 @@ function databaseName(baseName, region) {
 }
 
 function phaseForAttempt(attempt) {
-  return attempt <= 10 ? "p50-p90" : "p50";
+  return attempt <= 30 ? "p50-p90" : "p50";
 }
 
 function selfTest(data) {
@@ -146,11 +146,11 @@ function selfTest(data) {
   if (regionEntries.length !== 6) throw new Error(`Expected 6 regions, found ${regionEntries.length}`);
   if (databaseName("orders", "apac") !== "orders-apac") throw new Error("database suffix was not added");
   if (databaseName("orders-apac", "apac") !== "orders-apac") throw new Error("database suffix was duplicated");
-  if (phaseForAttempt(1) !== "p50-p90" || phaseForAttempt(10) !== "p50-p90") {
-    throw new Error("Attempts 1-10 must use the p50-p90 phase");
+  if (phaseForAttempt(1) !== "p50-p90" || phaseForAttempt(30) !== "p50-p90") {
+    throw new Error("Attempts 1-30 must use the p50-p90 phase");
   }
-  if (phaseForAttempt(11) !== "p50" || phaseForAttempt(20) !== "p50") {
-    throw new Error("Attempts 11-20 must use the p50 phase");
+  if (phaseForAttempt(31) !== "p50" || phaseForAttempt(50) !== "p50") {
+    throw new Error("Attempts 31-50 must use the p50 phase");
   }
 
   for (const [regionKey, region] of regionEntries) {
@@ -203,10 +203,10 @@ function selectAcceptableRows(rows, metric, acceptance) {
 function printHelp() {
   console.log(`Usage:
   placement-plan.mjs --region <region> [--base-name <name>] [--pretty]
-  placement-plan.mjs --region <region> --colo <colo> --attempt <1-20> [--base-name <name>] [--pretty]
+  placement-plan.mjs --region <region> --colo <colo> --attempt <1-50> [--base-name <name>] [--pretty]
   placement-plan.mjs --self-test
 
-Attempts 1-10 use the p50-p90 table. Attempts 11-20 use the p50 table.
+Attempts 1-30 use the p50-p90 table. Attempts 31-50 use the p50 table.
 Regions: weur, eeur, apac, oc, wnam, enam`);
 }
 
