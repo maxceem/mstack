@@ -46,7 +46,10 @@ missing or pre-failing checks in the brief.
 ## 2. Start Sol
 
 In T3, call `orchestrator_capabilities`. Pick the latest Sol unless the user
-named a version. Do not hardcode an ID. Record provider, model, and effort
+named a version. Run Sol only through the Codex harness. Never run it through
+another harness or service that lists the same model, such as OpenCode or
+OpenRouter, unless the user asks for that route and confirms it. If Codex
+cannot run Sol, stop and report it. Do not hardcode an ID. Record provider, model, and effort
 only if exposed. Use `delegate_task` every round (`role: "review"`,
 `mode: "async"`). Save `taskId`. New `clientRequestId` per round.
 `childThreadId` is storage, not the next target. Do not use
